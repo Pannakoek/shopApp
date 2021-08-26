@@ -11,7 +11,7 @@ class OrderItem extends StatefulWidget {
   OrderItem(this.order);
 
   @override
-  State<OrderItem> createState() => _OrderItemState();
+  _OrderItemState createState() => _OrderItemState();
 }
 
 class _OrderItemState extends State<OrderItem> {
@@ -45,28 +45,28 @@ class _OrderItemState extends State<OrderItem> {
                 children: widget.order.products
                     .map(
                       (prod) => Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text(
-                            prod.title,
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                prod.title,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                '${prod.quantity}x \$${prod.price}',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.grey,
+                                ),
+                              )
+                            ],
                           ),
-                          Text(
-                            '${prod.quantity}x \$${prod.price}',
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
                     )
                     .toList(),
               ),
-            ),
+            )
         ],
       ),
     );
